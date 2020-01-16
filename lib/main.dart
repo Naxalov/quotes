@@ -24,9 +24,6 @@ class _QuoteListState extends State<QuoteList> {
         text: 'The truth is rarely pure and never simple'),
   ];
 
-  Widget quoteTemplate(Quote quote) {
-//    return
-  }
 
   @override
   Widget build(BuildContext context) {
