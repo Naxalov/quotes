@@ -22,9 +22,6 @@ class _QuoteListState extends State<QuoteList> {
     Quote(
         author: 'Oscar Wilde',
         text: 'The truth is rarely pure and never simple'),
-    Quote(
-        author: 'Oscar Wilde',
-        text: '1The truth is rarely pure and never simple')
   ];
 
   Widget quoteTemplate(Quote quote) {
@@ -41,9 +38,16 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        children: quotes
+            .map((quote) => QuoteCard(
+                quote: quote,
+                delete: () {
+                  setState(() {
+                    quotes.remove(quote);
+                  });
+                }))
+            .toList(),
       ),
     );
   }
 }
-
