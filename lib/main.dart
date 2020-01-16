@@ -26,7 +26,9 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: <Widget>[],
+        children: quotes.map((quote) {
+          return Text(quote);
+        }).toList(),
       ),
     );
   }
